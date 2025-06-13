@@ -1,0 +1,433 @@
+/* 전체 초기화 및 기본 폰트 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* 네비게이션 바 스타일 */
+.Logo {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px 30px;
+}
+
+.Logo a {
+  color: black;
+  text-decoration: none;
+}
+
+.login a {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  padding-right: 60px;
+}
+
+.menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  color: black;
+  transition: color 0.2s;
+}
+
+.menu-toggle.active {
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: #222;
+  color: white;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.navbar .contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+/* 라이트/다크모드 토글 버튼 스타일 */
+.theme-toggle-btn {
+  margin-left: 16px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: #333;
+  outline: none;
+}
+
+.theme-toggle-btn:hover {
+  color: #007bff;
+}
+
+.bottom-menu {
+  display: flex;
+  margin-top: auto;
+  padding-bottom: 20px;
+  padding: 10px;
+  gap: 40px;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.bottom-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+  font-size: 20px;
+}
+
+.top-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 바둑판 그리드(네모 박스) 스타일 */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.grid-item {
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+}
+
+.grid-item h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  color: #222;
+}
+
+.grid-item p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 프로필(사진 아래 인스타/깃허브) 영역 스타일 */
+.profile {
+  display: flex;
+  align-items: flex-start;
+  background: darkgray;
+  color: #000;
+  padding: 32px;
+  border-radius: 16px;
+  width: 400px;
+  margin: 60px auto 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  justify-content: center;
+}
+
+.profile_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 32px;
+}
+
+.profile_image {
+  width: 120px;
+  height: 120px;
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.profile_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile_icons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+
+.icon-link {
+  text-decoration: none;
+  color: #222;
+  font-size: 32px;
+  transition: color 0.2s;
+}
+
+.icon-link:hover {
+  color: #e1306c;
+}
+
+.profile_text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 20px;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* 게시물 박스 및 버튼 */
+.post-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.create-post-btn {
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.create-post-btn:hover {
+  background: #444;
+}
+
+.post-box {
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  width: 480px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #222;
+  text-align: center;
+}
+
+/* 로그인 박스 */
+.login-box {
+  background-color: white;
+  border: 2px solid black;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1.5px solid #333;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.but {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.but:hover {
+  background-color: #333;
+}
+
+/* ===================== 다크모드 ===================== */
+body {
+  background: #f6f6f6;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* 네모 박스 등에서 color를 따로 지정하지 않거나, 다크모드에서 !important로 덮어씌우기 */
+.grid-item,
+.post-box,
+.login-box,
+.profile,
+.profile_text,
+label,
+input,
+.but {
+  color: inherit;
+}
+
+/* 다크모드에서 네모 박스 등 글씨 색상 강제 적용 */
+body.dark-mode .grid-item,
+body.dark-mode .post-box,
+body.dark-mode .login-box,
+body.dark-mode .profile,
+body.dark-mode .profile_text,
+body.dark-mode label,
+body.dark-mode input,
+body.dark-mode .but {
+  color: #e0e0e0 !important;
+}
+
+/* 링크 등도 다크모드에서 밝게 */
+body.dark-mode a {
+  color: #e0e0e0 !important;
+}
+
+/* 중앙에 굵고 크게 문구 */
+.team-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-top: 64px;
+    margin-bottom: 48px;
+    letter-spacing: 1.5px;
+    color: #222;
+}
+
+/* 팀원 네모 박스 그리드 */
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 팀원 카드(네모 박스) */
+.team-card {
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px 24px 20px;
+    min-height: 320px;
+    transition: box-shadow 0.2s;
+}
+
+/* 팀원 이미지 */
+.team-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 팀원 정보 텍스트 */
+.team-info {
+    width: 100%;
+    text-align: center;
+}
+
+.team-name, .team-id {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* 다크모드 대응 */
+body.dark-mode .team-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .team-card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .team-name,
+body.dark-mode .team-id {
+    color: #e0e0e0;
+}

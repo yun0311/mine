@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="contain">
+      <div class="Logo"><a href="../main.html">JB_Study</a></div>
+      <div class="menu-toggle">&#9776;</div>
+      <nav class="sidebar">
+        <ul class="top-menu">
+          <li><a href="/about.html">소개</a></li>
+          <li><a href="/intro.html">팀원 소개</a></li>
+          <li><a href="/webprogramming.html">웹프로그래밍</a></li>
+        </ul>
+        <ul class="bottom-menu">
+          <li><a href="#">설정</a></li>
+          <li><a href="#">도움말</a></li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- 로그인 박스 시작 -->
+  <div class="login-box">
+    <label class="username" for="username">아이디</label>
+    <input type="text" id="username" name="username" required>
+    <label class="password" for="password">비밀번호</label>
+    <input type="password" id="password" name="password" required>
+    <button class="but" type="submit">로그인 </button>
+    <button class="but" type="button" onclick="location.href='member.html'">회원가입</button>
+  </div>
+  <!-- 로그인 박스 끝 -->
+
+  <script src="main_login.js"></script>
+</body>
+
+</html>
